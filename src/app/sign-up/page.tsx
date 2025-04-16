@@ -4,7 +4,7 @@ import Link from "next/link";
 const SignUpPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 md:py-24 w-full ">
-      <div className="flex flex-col gap-8 md:gap-14 justify-center items-center w-full md:max-w-6xl md:mx-auto px-4">
+      <div className="flex flex-col gap-8 md:gap-14 justify-center items-center w-full md:max-w-4xl md:mx-auto px-4">
         <div className="flex flex-col gap-4 items-center text-center">
           <div className="inline-block p-3 bg-blue-100 rounded-full mb-2">
             <svg
