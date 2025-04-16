@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { X, Save, Briefcase, Mail, Phone, User2 } from "lucide-react";
+import { X, Save, Mail, Phone, User2 } from "lucide-react";
 import { skills, qualifications } from "@/lib/constants";
 import axios from "axios";
 import { toast } from "sonner";
@@ -19,7 +19,6 @@ const profileSchema = z.object({
     .max(50, "Name cannot exceed 50 characters"),
   email: z.string().email("Please enter a valid email address"),
   phoneNumber: z.string().optional(),
-  role: z.enum(["jobseeker", "employer"]),
   location: z.string().optional(),
   bio: z.string().max(500, "Bio cannot exceed 500 characters").optional(),
   skills: z.array(z.string()),
@@ -55,7 +54,6 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
 
   // Setup React Hook Form with Zod resolver
   const {
-    control,
     register,
     handleSubmit,
     formState: { errors },
@@ -77,8 +75,6 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
       },
     },
   });
-
-  const roleOptions = ["jobseeker", "employer"];
 
   // Watch for bio field to display character count
   const bioValue = watch("bio");
@@ -263,61 +259,6 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                       {errors.phoneNumber && (
                         <p className="mt-1 text-sm text-red-600">
                           {errors.phoneNumber.message}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Role */}
-                    <div>
-                      <label
-                        htmlFor="role"
-                        className="block text-sm font-medium text-gray-700 mb-1"
-                      >
-                        Role
-                      </label>
-                      <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Briefcase className="h-5 w-5 text-gray-400" />
-                        </div>
-                        <Controller
-                          name="role"
-                          control={control}
-                          render={({ field }) => (
-                            <select
-                              id="role"
-                              {...field}
-                              className={`pl-10 w-full px-4 py-2 border ${
-                                errors.role
-                                  ? "border-red-500 focus:ring-red-500 focus:border-red-500"
-                                  : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                              } rounded-lg appearance-none shadow-sm`}
-                            >
-                              {roleOptions.map((option) => (
-                                <option key={option} value={option}>
-                                  {option.charAt(0).toUpperCase() +
-                                    option.slice(1)}
-                                </option>
-                              ))}
-                            </select>
-                          )}
-                        />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                          <svg
-                            className="h-5 w-5 text-gray-400"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      {errors.role && (
-                        <p className="mt-1 text-sm text-red-600">
-                          {errors.role.message}
                         </p>
                       )}
                     </div>

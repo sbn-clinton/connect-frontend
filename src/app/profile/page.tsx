@@ -91,7 +91,7 @@ const ProfilePage = () => {
     fullName: user.fullName || "",
     email: user.email || "",
     phoneNumber: user.phoneNumber || "",
-    role: user.role || "",
+
     location: user.location || "",
     bio: user.bio || "",
     skills: user.skills || [],
