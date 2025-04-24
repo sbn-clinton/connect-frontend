@@ -88,9 +88,12 @@ const ContactUsPage = () => {
         variants={containerVariants}
       >
         {/* Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
+        <motion.div
+          className="text-center mb-11 md:mb-16"
+          variants={itemVariants}
+        >
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-blue-800 mb-4"
+            className="text-2xl md:text-5xl font-bold text-blue-800 mb-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -98,7 +101,7 @@ const ContactUsPage = () => {
             Connect With Us
           </motion.h1>
           <motion.p
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto"
             variants={itemVariants}
           >
             Whether you&lsquo;re looking for talent or seeking new
@@ -116,21 +119,25 @@ const ContactUsPage = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <h2 className="text-2xl font-bold text-blue-700 mb-6">
+              <h2 className="text-lg md:text-2xl font-bold text-blue-700 mb-6">
                 Get in Touch
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <motion.div
                   className="flex items-start space-x-4"
                   variants={itemVariants}
                 >
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <Mail className="h-6 w-6 text-blue-600" />
+                  <div className="bg-blue-100 p-2 md:p-3 rounded-full">
+                    <Mail className="md:h-6 h-4 w-4 md:w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">Email</h3>
-                    <p className="text-blue-600">support@connect.com</p>
+                    <h3 className="font-medium text-gray-800 text-sm md:text-base">
+                      Email
+                    </h3>
+                    <p className="text-blue-600 text-xs md:text-sm">
+                      support@connect.com
+                    </p>
                   </div>
                 </motion.div>
 
@@ -138,12 +145,16 @@ const ContactUsPage = () => {
                   className="flex items-start space-x-4"
                   variants={itemVariants}
                 >
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                  <div className="bg-blue-100 p-2 md:p-3 rounded-full">
+                    <Phone className="md:h-6 h-4 w-4 md:w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">Phone</h3>
-                    <p className="text-blue-600">+1 (555) 123-4567</p>
+                    <h3 className="font-medium text-gray-800 text-sm md:text-base">
+                      Phone
+                    </h3>
+                    <p className="text-blue-600 text-xs md:text-sm">
+                      +1 (555) 123-4567
+                    </p>
                   </div>
                 </motion.div>
 
@@ -151,12 +162,14 @@ const ContactUsPage = () => {
                   className="flex items-start space-x-4"
                   variants={itemVariants}
                 >
-                  <div className="bg-blue-100 p-3 rounded-full">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                  <div className="bg-blue-100 p-2 md:p-3 rounded-full">
+                    <MapPin className="md:h-6 h-4 w-4 md:w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">Office</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-medium text-gray-800 text-sm md:text-base">
+                      Office
+                    </h3>
+                    <p className="text-gray-600 text-xs md:text-sm">
                       123 Innovation Drive
                       <br />
                       Tech Valley, CA 94103
@@ -166,20 +179,36 @@ const ContactUsPage = () => {
               </div>
 
               <motion.div className="mt-12" variants={itemVariants}>
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                <h3 className="md:text-lg font-semibold text-gray-800 mb-4">
                   Connect with us
                 </h3>
                 <div className="flex space-x-4">
                   {[
-                    { name: "twitter", icon: <FaTwitter />, href: "#" },
-                    { name: "linkedin", icon: <FaLinkedin />, href: "#" },
-                    { name: "facebook", icon: <FaFacebook />, href: "#" },
-                    { name: "instagram", icon: <FaInstagram />, href: "#" },
+                    {
+                      name: "twitter",
+                      icon: <FaTwitter className="h-4 w-4 md:h-6 md:w-6" />,
+                      href: "#",
+                    },
+                    {
+                      name: "linkedin",
+                      icon: <FaLinkedin className="h-4 w-4 md:h-6 md:w-6" />,
+                      href: "#",
+                    },
+                    {
+                      name: "facebook",
+                      icon: <FaFacebook className="h-4 w-4 md:h-6 md:w-6" />,
+                      href: "#",
+                    },
+                    {
+                      name: "instagram",
+                      icon: <FaInstagram className="h-4 w-4 md:h-6 md:w-6" />,
+                      href: "#",
+                    },
                   ].map((social) => (
                     <motion.a
                       key={social.name}
                       href={social.href}
-                      className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition-colors"
+                      className="bg-blue-100 p-2 md:p-3 rounded-full hover:bg-blue-200 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -197,7 +226,7 @@ const ContactUsPage = () => {
               className="bg-white rounded-2xl shadow-xl p-8"
               variants={itemVariants}
             >
-              <h2 className="text-2xl font-bold text-blue-700 mb-6">
+              <h2 className="text-lg md:text-2xl font-bold text-blue-700 mb-6">
                 Send us a message
               </h2>
 
@@ -214,12 +243,12 @@ const ContactUsPage = () => {
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                   >
-                    <Send className="h-8 w-8 text-green-600" />
+                    <Send className="h-6 w-6md:h-8 md:w-8 text-green-600" />
                   </motion.div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="md:text-xl font-bold text-gray-800 mb-2">
                     Message Sent!
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Thank you for reaching out. We&lsquo;ll get back to you
                     shortly.
                   </p>
@@ -227,7 +256,7 @@ const ContactUsPage = () => {
               ) : (
                 <motion.form
                   onSubmit={handleSubmit}
-                  className="space-y-6"
+                  className="space-y-4 md:space-y-6"
                   variants={containerVariants}
                 >
                   <div className="grid md:grid-cols-2 gap-6">
@@ -245,7 +274,7 @@ const ContactUsPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                        className="w-full px-3 py-2 md:px-4 md:py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                         placeholder="John Doe"
                       />
                     </motion.div>
@@ -264,7 +293,7 @@ const ContactUsPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                        className="w-full  px-3 py-2 md:px-4 md:py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                         placeholder="john@example.com"
                       />
                     </motion.div>
@@ -279,7 +308,7 @@ const ContactUsPage = () => {
                     </label>
                     <div className="grid grid-cols-2 gap-4">
                       <label
-                        className={`flex items-center gap-3 p-4 border ${
+                        className={`flex items-center gap-3 md:p-4 p-2 border ${
                           formData.userType === "job-seeker"
                             ? "bg-blue-50 border-blue-300"
                             : "bg-white border-gray-200"
@@ -293,12 +322,14 @@ const ContactUsPage = () => {
                           onChange={handleChange}
                           className="sr-only"
                         />
-                        <Users className="h-5 w-5 text-blue-600" />
-                        <span className="font-medium">Job Seeker</span>
+                        <Users className="md:h-5 md:w-5 h-4 w-4 text-blue-600" />
+                        <span className="font-medium text-sm md:text-base">
+                          Job Seeker
+                        </span>
                       </label>
 
                       <label
-                        className={`flex items-center gap-3 p-4 border ${
+                        className={`flex items-center gap-3 md:p-4 p-2 border ${
                           formData.userType === "employer"
                             ? "bg-blue-50 border-blue-300"
                             : "bg-white border-gray-200"
@@ -312,8 +343,10 @@ const ContactUsPage = () => {
                           onChange={handleChange}
                           className="sr-only"
                         />
-                        <Briefcase className="h-5 w-5 text-blue-600" />
-                        <span className="font-medium">Employer</span>
+                        <Briefcase className="md:h-5 md:w-5 h-4 w-4text-blue-600" />
+                        <span className="font-medium text-sm md:text-base">
+                          Employer
+                        </span>
                       </label>
                     </div>
                   </motion.div>
@@ -332,7 +365,7 @@ const ContactUsPage = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full   px-3 py-2 md:px-4 md:py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="How can we help you?"
                     />
                   </motion.div>
@@ -351,7 +384,7 @@ const ContactUsPage = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      className="w-full   px-3 py-2 md:px-4 md:py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                       placeholder="Tell us more about your needs..."
                     ></textarea>
                   </motion.div>
@@ -362,11 +395,11 @@ const ContactUsPage = () => {
                   >
                     <motion.button
                       type="submit"
-                      className="inline-flex items-center px-6 py-3 bg-blue-600 border border-transparent rounded-lg text-white font-medium shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                      className="inline-flex text-sm md:text-base items-center   px-3 py-2 md:px-4 md:py-3 bg-blue-600 border border-transparent rounded-lg text-white font-medium shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <MessageSquare className="mr-2 h-5 w-5" />
+                      <MessageSquare className="mr-2 md:h-5 md:w-5 h-4 w-4" />
                       Send Message
                     </motion.button>
                   </motion.div>
@@ -384,7 +417,7 @@ const ContactUsPage = () => {
           transition={{ delay: 0.8, duration: 0.7 }}
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-800">
+            <h2 className="text-xl md:text-3xl font-bold text-blue-800">
               Frequently Asked Questions
             </h2>
             <p className="text-gray-600 mt-2">
@@ -392,7 +425,7 @@ const ContactUsPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             {[
               {
                 question: "How does Connect match employers with job seekers?",
@@ -417,7 +450,7 @@ const ContactUsPage = () => {
             ].map((faq, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-100"
+                className="bg-white p-4 md:p-6 rounded-xl shadow-sm border border-gray-100"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
@@ -426,10 +459,12 @@ const ContactUsPage = () => {
                   boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                 }}
               >
-                <h3 className="font-bold text-gray-800 text-lg mb-2">
+                <h3 className="font-bold text-gray-800 md:text-lg mb-2">
                   {faq.question}
                 </h3>
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-600 text-sm md:text-base">
+                  {faq.answer}
+                </p>
               </motion.div>
             ))}
           </div>

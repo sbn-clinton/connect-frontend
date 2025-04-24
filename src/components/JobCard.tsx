@@ -43,20 +43,20 @@ const JobCard = ({ job }: { job: Job }) => {
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-5 border-b border-gray-100">
         <div className="flex items-start justify-between">
           <div>
-            <h2 className="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">
+            <h2 className="text-lg md:text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300">
               {job.title}
             </h2>
             <div className="flex items-center mt-2 text-gray-600">
               <Building size={16} className="mr-1" />
-              <span className="text-sm font-medium">
+              <span className="text-xs md:text-sm font-medium">
                 {job.company || "Company"}
               </span>
             </div>
           </div>
 
           {/* Company Logo Placeholder */}
-          <div className="bg-white p-2 rounded-lg shadow-sm">
-            <div className="w-10 h-10 bg-blue-100 rounded-md flex items-center justify-center text-blue-600 font-bold">
+          <div className="bg-white p-1 md:p-2 rounded-lg shadow-sm">
+            <div className="h-7 w-7 md:w-10 md:h-10 bg-blue-100 rounded-md flex items-center justify-center text-blue-600 font-bold">
               {(job.company?.[0] || "C").toUpperCase()}
             </div>
           </div>
@@ -67,7 +67,7 @@ const JobCard = ({ job }: { job: Job }) => {
       <div className="p-5">
         {/* Description */}
         <div className="mb-4">
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 text-xs md:text-sm">
             {truncateText(job.description || "", 150)}
           </p>
         </div>
@@ -75,20 +75,28 @@ const JobCard = ({ job }: { job: Job }) => {
         {/* Job Details */}
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div className="flex items-center text-gray-600">
-            <MapPin size={16} className="mr-2 text-blue-500" />
-            <span className="text-sm">{job.location || "Remote"}</span>
+            <MapPin size={16} className="mr-1 md:mr-2 text-blue-500" />
+            <span className="text-xs md:text-sm">
+              {job.location || "Remote"}
+            </span>
           </div>
           <div className="flex items-center text-gray-600">
-            <Briefcase size={16} className="mr-2 text-blue-500" />
-            <span className="text-sm">{job.jobType || "Full-time"}</span>
+            <Briefcase size={16} className="mr-1 md:mr-2 text-blue-500" />
+            <span className="text-xs md:text-sm">
+              {job.jobType || "Full-time"}
+            </span>
           </div>
           <div className="flex items-center text-gray-600">
-            <Globe size={16} className="mr-2 text-blue-500" />
-            <span className="text-sm">{job.employmentMode || "On-site"}</span>
+            <Globe size={16} className="mr-1 md:mr-2 text-blue-500" />
+            <span className="text-xs md:text-sm">
+              {job.employmentMode || "On-site"}
+            </span>
           </div>
           <div className="flex items-center text-gray-600">
-            <Calendar size={16} className="mr-2 text-blue-500" />
-            <span className="text-sm">Posted {formatDate(job.createdAt)}</span>
+            <Calendar size={16} className="mr-1 md:mr-2 text-blue-500" />
+            <span className="text-xs md:text-sm">
+              Posted {formatDate(job.createdAt)}
+            </span>
           </div>
         </div>
 
@@ -96,19 +104,19 @@ const JobCard = ({ job }: { job: Job }) => {
         <div className="space-y-3 mb-6">
           {/* Requirements Section */}
           <details className="group">
-            <summary className="flex items-center cursor-pointer text-gray-700 font-medium">
+            <summary className="flex items-center cursor-pointer text-gray-700 font-medium text-sm md:text-base">
               <CheckCircle size={16} className="mr-2 text-green-500" />
               Requirements
-              <ChevronRight
-                size={16}
-                className="ml-2 transition-transform duration-300 group-open:rotate-90"
-              />
+              <ChevronRight className="ml-2 transition-transform duration-300 group-open:rotate-90 w-3 h-3 md:h-4 md:w-4" />
             </summary>
             <div className="mt-2 ml-6 pl-2 border-l-2 border-gray-200">
               <ul className="list-disc pl-4 space-y-1">
                 {job.requirements && job.requirements.length > 0 ? (
                   job.requirements.map((requirement, index) => (
-                    <li key={index} className="text-sm text-gray-600">
+                    <li
+                      key={index}
+                      className="text-xs md:text-sm text-gray-600"
+                    >
                       {requirement}
                     </li>
                   ))
@@ -123,19 +131,19 @@ const JobCard = ({ job }: { job: Job }) => {
 
           {/* Responsibilities Section */}
           <details className="group">
-            <summary className="flex items-center cursor-pointer text-gray-700 font-medium">
+            <summary className="flex items-center cursor-pointer text-gray-700 font-medium text-sm md:text-base">
               <ClipboardList size={16} className="mr-2 text-blue-500" />
               Responsibilities
-              <ChevronRight
-                size={16}
-                className="ml-2 transition-transform duration-300 group-open:rotate-90"
-              />
+              <ChevronRight className="ml-2 transition-transform duration-300 group-open:rotate-90 w-3 h-3 md:h-4 md:w-4" />
             </summary>
             <div className="mt-2 ml-6 pl-2 border-l-2 border-gray-200">
               <ul className="list-disc pl-4 space-y-1">
                 {job.responsibilities && job.responsibilities.length > 0 ? (
                   job.responsibilities.map((responsibility, index) => (
-                    <li key={index} className="text-sm text-gray-600">
+                    <li
+                      key={index}
+                      className="text-xs md:text-sm text-gray-600"
+                    >
                       {responsibility}
                     </li>
                   ))
@@ -166,7 +174,7 @@ const JobCard = ({ job }: { job: Job }) => {
               <Link href={`/jobs/${job._id}`}>
                 <Button
                   variant="outline"
-                  className="text-blue-600 border-blue-600 hover:bg-blue-50"
+                  className="text-blue-600 border-blue-600 hover:bg-blue-50 text-sm md:text-base px-2 md:px-4 py-2 md:py-3"
                 >
                   View Details
                 </Button>

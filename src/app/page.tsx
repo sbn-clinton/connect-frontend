@@ -30,23 +30,23 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 leading-tight">
+              <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-blue-900 leading-tight">
                 Connect With Your{" "}
                 <span className="text-blue-600">Dream Career</span>
               </h1>
-              <p className="mt-6 text-lg md:text-xl text-gray-600 max-w-lg mx-auto md:mx-0">
+              <p className="mt-6  md:text-xl text-gray-600 max-w-lg mx-auto md:mx-0">
                 Where top talent meets opportunity. Join thousands of
                 professionals finding their perfect match in the job market.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-6 rounded-lg text-lg flex items-center gap-2">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white text-sm md:text-lg px-6 py-4 md:py-6 rounded-lg flex items-center gap-2">
                   <Search size={20} />
                   Find Jobs
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-6 rounded-lg text-lg flex items-center gap-2"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 text-sm md:text-lg px-6 py-4 md:py-6 rounded-lg flex items-center gap-2"
                 >
                   <Briefcase size={20} />
                   Post a Job
@@ -73,10 +73,10 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white text-center px-4">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-2">
+                    <h2 className="text-xl md:text-4xl font-bold mb-2">
                       JobConnect
                     </h2>
-                    <p className="text-lg md:text-xl">
+                    <p className=" md:text-xl">
                       Building Careers, Connecting Futures
                     </p>
                   </div>
@@ -88,32 +88,38 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-white">
+      <section className="py-8 md:py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-blue-600">
+              <p className="text-xl md:text-4xl font-bold text-blue-600">
                 5,000+
               </p>
-              <p className="text-gray-600 mt-2">Active Jobs</p>
+              <p className="text-gray-600 mt-2 text-sm md:text-base">
+                Active Jobs
+              </p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-blue-600">
+              <p className="text-xl md:text-4xl font-bold text-blue-600">
                 10k+
               </p>
-              <p className="text-gray-600 mt-2">Job Seekers</p>
+              <p className="text-gray-600 mt-2 text-sm md:text-base">
+                Job Seekers
+              </p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-blue-600">
+              <p className="text-xl md:text-4xl font-bold text-blue-600">
                 2,500+
               </p>
-              <p className="text-gray-600 mt-2">Companies</p>
+              <p className="text-gray-600 mt-2 text-sm md:text-base">
+                Companies
+              </p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-blue-600">
-                8k+
+              <p className="text-xl md:text-4xl font-bold text-blue-600">8k+</p>
+              <p className="text-gray-600 mt-2 text-sm md:text-base">
+                Successful Hires
               </p>
-              <p className="text-gray-600 mt-2">Successful Hires</p>
             </div>
           </div>
         </div>
@@ -123,10 +129,10 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+            <h2 className="text-xl md:text-4xl font-bold text-blue-900">
               How It Works
             </h2>
-            <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            <p className="text-sm md:text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
               Our platform simplifies the job search and hiring process with
               powerful tools for both job seekers and employers.
             </p>
@@ -136,7 +142,7 @@ export default function Home() {
           <div className="flex justify-center mb-12">
             <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
               <button
-                className={`px-4 py-2 text-sm md:text-base rounded-md ${
+                className={`px-2 md:px-4 py-1 md:py-2 text-sm md:text-base rounded-md ${
                   activeTab === "jobSeeker"
                     ? "bg-blue-600 text-white"
                     : "text-gray-600"
@@ -146,7 +152,7 @@ export default function Home() {
                 For Job Seekers
               </button>
               <button
-                className={`px-4 py-2 text-sm md:text-base rounded-md ${
+                className={`px-2 md:px-4 py-1 md:py-2 text-sm md:text-base rounded-md ${
                   activeTab === "employer"
                     ? "bg-blue-600 text-white"
                     : "text-gray-600"
@@ -160,39 +166,39 @@ export default function Home() {
 
           {/* Job Seeker Features */}
           {activeTab === "jobSeeker" && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Search className="w-6 h-6 text-blue-600" />
+            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
+              <div className="bg-white p-4 md:p-6 rounded-xl shadow-md">
+                <div className="md:w-12 md:h-12 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <Search className="md:w-6 md:h-6 w-4 h-4 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="md:text-xl font-semibold text-blue-900">
                   Smart Job Search
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2 text-sm  md:text-base">
                   Find the perfect job with our AI-powered search that matches
                   your skills and preferences.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Award className="w-6 h-6 text-blue-600" />
+              <div className="bg-white  p-4 md:p-6 rounded-xl shadow-md">
+                <div className="md:w-12 md:h-12 w-8 h-8  bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <Award className="md:w-6 md:h-6 w-4 h-4 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="md:text-xl font-semibold text-blue-900">
                   Skill Showcase
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2 text-sm md:text-base">
                   Highlight your qualifications and expertise with a
                   comprehensive professional profile.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <MessageSquare className="w-6 h-6 text-blue-600" />
+              <div className="bg-white  p-4 md:p-6 rounded-xl shadow-md">
+                <div className="md:w-12 md:h-12 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <MessageSquare className="md:w-6 md:h-6 w-4 h-4  text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="md:text-xl font-semibold text-blue-900">
                   Direct Communication
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2 text-sm  md:text-base">
                   Connect directly with employers and receive interview requests
                   through our messaging system.
                 </p>
@@ -202,39 +208,39 @@ export default function Home() {
 
           {/* Employer Features */}
           {activeTab === "employer" && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-blue-600" />
+            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
+              <div className="bg-white  p-4 md:p-6  rounded-xl shadow-md">
+                <div className="md:w-12 md:h-12 w-8 h-8  bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <Users className="md:w-6 md:h-6 w-4 h-4  text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="md:text-xl font-semibold text-blue-900">
                   Talent Discovery
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2 text-sm  md:text-base">
                   Browse our database of qualified candidates and filter by
                   skills, experience, and location.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <TrendingUp className="w-6 h-6 text-blue-600" />
+              <div className="bg-white  p-4 md:p-6 rounded-xl shadow-md">
+                <div className="md:w-12 md:h-12 w-8 h-8  bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <TrendingUp className="md:w-6 md:h-6 w-4 h-4  text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="md:text-xl font-semibold text-blue-900">
                   Job Visibility
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2  text-sm  md:text-base">
                   Post job listings that reach thousands of qualified candidates
                   with our promotion tools.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-blue-600" />
+              <div className="bg-white  p-4 md:p-6  rounded-xl shadow-md">
+                <div className="md:w-12 md:h-12 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <CheckCircle className="md:w-6 md:h-6 w-4 h-4 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-blue-900">
+                <h3 className="md:text-xl font-semibold text-blue-900">
                   Applicant Tracking
                 </h3>
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-600 mt-2 text-sm  md:text-base">
                   Manage applications, schedule interviews, and track hiring
                   progress all in one place.
                 </p>
@@ -245,19 +251,19 @@ export default function Home() {
       </section>
 
       {/* Job Categories */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+            <h2 className="text-xl md:text-4xl font-bold text-blue-900">
               Popular Job Categories
             </h2>
-            <p className="text-lg text-gray-600 mt-4">
+            <p className="text-sm md:text-lg text-gray-600 mt-4">
               Explore opportunities across various industries and
               specializations
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 md:gap-6 gap-4">
             {[
               { name: "Technology", icon: "💻", count: "1,234" },
               { name: "Finance", icon: "📊", count: "867" },
@@ -272,9 +278,11 @@ export default function Home() {
                 key={index}
                 className="bg-white border border-gray-200 rounded-lg p-4 text-center hover:shadow-md transition-all hover:border-blue-300"
               >
-                <div className="text-3xl mb-2">{category.icon}</div>
-                <h3 className="font-semibold text-blue-900">{category.name}</h3>
-                <p className="text-sm text-gray-500 mt-1">
+                <div className="md:text-3xl text-2xl mb-2">{category.icon}</div>
+                <h3 className="font-semibold text-blue-900 text-sm md:text-base">
+                  {category.name}
+                </h3>
+                <p className="text-xs md:text-sm text-gray-500 mt-1">
                   {category.count} jobs
                 </p>
               </div>
@@ -282,7 +290,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-10">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-4 md:px-6 py-2 text-sm md:text-base">
               Browse All Categories
             </Button>
           </div>
@@ -290,13 +298,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-blue-50">
+      <section className="py-12 md:py-24 bg-blue-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+            <h2 className="text-xl md:text-4xl font-bold text-blue-900">
               Success Stories
             </h2>
-            <p className="text-lg text-gray-600 mt-4">
+            <p className="md:text-lg text-gray-600 mt-4">
               See what our users say about their experience with our platform
             </p>
           </div>
@@ -319,29 +327,34 @@ export default function Home() {
                 text: "The portfolio showcase feature helped me stand out. I received multiple interview requests from top companies.",
               },
             ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md">
-                <div className="flex mb-4">
+              <div
+                key={index}
+                className="bg-white p-4 md:p-6 rounded-xl shadow-md"
+              >
+                <div className="flex mb-3 md:mb-4">
                   {Array(5)
                     .fill(0)
                     .map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                        className="md:w-5 md:h-5 w-3 h-3 text-yellow-400 fill-yellow-400"
                       />
                     ))}
                 </div>
-                <p className="text-gray-600 italic mb-4">
+                <p className="text-gray-600 italic mb-4 text-sm md:text-base">
                   &ldquo;{testimonial.text}&ldquo;
                 </p>
                 <div className="flex items-center">
-                  <div className="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 font-bold">
+                  <div className="md:w-10 md:h-10 w-7 h-7 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 font-bold">
                     {testimonial.name[0]}
                   </div>
                   <div className="ml-3">
-                    <p className="font-semibold text-blue-900">
+                    <p className="font-semibold text-sm md:text-base text-blue-900">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <p className="text-xs md:text-sm text-gray-500">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -351,22 +364,22 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-5xl mx-auto px-4">
           <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className=" md:text-4xl font-bold mb-4">
               Ready to Take the Next Step?
             </h2>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-sm md:text-xl mb-8 max-w-2xl mx-auto">
               Whether you&ldquo;re looking for your next career opportunity or
               searching for top talent, join our platform today and connect with
               possibilities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-lg font-medium">
+              <Button className="bg-white text-blue-600 hover:bg-blue-50 md:px-6 px-4 py-2 md:py-3 text-sm md:text-lg font-medium">
                 Sign Up as Job Seeker
               </Button>
-              <Button className="bg-blue-900 text-white hover:bg-blue-950 px-6 py-3 text-lg font-medium">
+              <Button className="bg-blue-900 text-white hover:bg-blue-950  md:px-6 px-4 py-2 md:py-3 text-sm md:text-lg font-medium">
                 Sign Up as Employer
               </Button>
             </div>
@@ -378,7 +391,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-blue-900">
+            <h2 className="text-lg md:text-3xl font-bold text-blue-900">
               Trusted by Leading Companies
             </h2>
           </div>

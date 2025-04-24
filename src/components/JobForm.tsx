@@ -77,16 +77,16 @@ const JobForm = () => {
   return (
     <Card className="w-full shadow-md border-gray-200">
       <CardHeader className="bg-gray-50 border-b border-gray-100">
-        <CardTitle className="text-xl text-gray-800">Job Details</CardTitle>
-        <CardDescription>
+        <CardTitle className="md:text-xl text-gray-800">Job Details</CardTitle>
+        <CardDescription className="text-xs md:text-base">
           Fill in the information below to create a new job listing
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="pt-6">
+      <CardContent className="md:pt-6 pt-4">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4">
               {/* Basic Information */}
               <div className="space-y-4 md:col-span-2">
                 <h3 className="font-medium text-gray-700 flex items-center gap-2">

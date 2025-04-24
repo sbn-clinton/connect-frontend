@@ -130,23 +130,23 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
       {/* Edit Profile Button */}
       <button
         onClick={() => setIsDialogOpen(true)}
-        className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+        className="flex items-center justify-center px-3 py-1 text-sm md:text-base md:px-4 md:py-2 font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
       >
-        <User2 className="w-4 h-4 mr-2" />
+        <User2 className="md:w-4 md:h-4 h-3 w-3 mr-2" />
         Edit Profile
       </button>
 
       {/* Modal Dialog */}
       {isDialogOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center p-4 ">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center md:p-4 p-3">
           <div className="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
             {/* Dialog Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200">
               <div>
-                <h2 className="text-2xl font-bold text-gray-800">
+                <h2 className="text-lg md:text-2xl font-bold text-gray-800">
                   Edit Profile
                 </h2>
-                <p className="text-gray-500 mt-1">
+                <p className="text-sm md:text-base text-gray-500 mt-1">
                   Update your personal information and preferences
                 </p>
               </div>
@@ -154,20 +154,23 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                 onClick={() => setIsDialogOpen(false)}
                 className="text-gray-500 hover:text-gray-700 transition-colors"
               >
-                <X className="w-6 h-6" />
+                <X className="md:w-6 md:h-6 h-5 w-5" />
               </button>
             </div>
 
             {/* Form Content */}
-            <div className="overflow-y-auto p-6  max-h-[calc(90vh-130px)]">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <div className="overflow-y-auto p-5 md:p-6  max-h-[calc(90vh-130px)]">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className=" space-y-3 md:space-y-6"
+              >
                 {/* Personal Information Section */}
                 <div>
                   <div className="flex items-center mb-4">
-                    <h3 className="text-lg font-medium text-gray-800">
+                    <h3 className="md:text-lg font-medium text-gray-800">
                       Personal Information
                     </h3>
-                    <div className="h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-500 ml-4 rounded-full"></div>
+                    <div className="md:h-1 h-0.5 w-16 bg-gradient-to-r from-blue-400 to-purple-500 ml-4 rounded-full"></div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -181,13 +184,13 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <User2 className="h-5 w-5 text-gray-400" />
+                          <User2 className="md:h-5 md:w-5 h-4 w-4 text-gray-400" />
                         </div>
                         <input
                           id="fullName"
                           {...register("fullName")}
                           placeholder="John Doe"
-                          className={`pl-10 w-full px-4 py-2 border ${
+                          className={`pl-10 w-full text-sm md:text-base px-4 py-2 border ${
                             errors.fullName
                               ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                               : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -211,14 +214,14 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Mail className="h-5 w-5 text-gray-400" />
+                          <Mail className="md:h-5 md:w-5 h-4 w-4 text-gray-400" />
                         </div>
                         <input
                           id="email"
                           type="email"
                           {...register("email")}
                           placeholder="example@email.com"
-                          className={`pl-10 w-full px-4 py-2 border ${
+                          className={`pl-10 w-full text-sm md:text-base px-4 py-2 border ${
                             errors.email
                               ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                               : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -242,14 +245,14 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <Phone className="h-5 w-5 text-gray-400" />
+                          <Phone className="md:h-5 md:w-5 h-4 w-4 text-gray-400" />
                         </div>
                         <input
                           id="phoneNumber"
                           type="tel"
                           {...register("phoneNumber")}
                           placeholder="+1 234 567 8900"
-                          className={`pl-10 w-full px-4 py-2 border ${
+                          className={`pl-10 w-full text-sm md:text-base px-4 py-2 border ${
                             errors.phoneNumber
                               ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                               : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -305,10 +308,10 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                 {/* Professional Details Section */}
                 <div>
                   <div className="flex items-center mb-4">
-                    <h3 className="text-lg font-medium text-gray-800">
+                    <h3 className="md:text-lg font-medium text-gray-800">
                       Professional Details
                     </h3>
-                    <div className="h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-500 ml-4 rounded-full"></div>
+                    <div className="h-0.5 md:h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-500 ml-4 rounded-full"></div>
                   </div>
 
                   {/* Skills */}
@@ -424,10 +427,10 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                 {/* Social Links Section */}
                 <div>
                   <div className="flex items-center mb-4">
-                    <h3 className="text-lg font-medium text-gray-800">
+                    <h3 className="md:text-lg font-medium text-gray-800">
                       Social Links
                     </h3>
-                    <div className="h-1 w-16 bg-gradient-to-r from-blue-400 to-purple-500 ml-4 rounded-full"></div>
+                    <div className="md:h-1 h-0.5 w-16 bg-gradient-to-r from-blue-400 to-purple-500 ml-4 rounded-full"></div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -455,7 +458,7 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                           type="url"
                           {...register("socialLinks.linkedIn")}
                           placeholder="https://linkedin.com/in/your-profile"
-                          className={`pl-10 w-full px-4 py-2 border ${
+                          className={`pl-10 w-full text-sm md:text-base px-4 py-2 border ${
                             errors.socialLinks?.linkedIn
                               ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                               : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -497,7 +500,7 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                           type="url"
                           {...register("socialLinks.github")}
                           placeholder="https://github.com/your-profile"
-                          className={`pl-10 w-full px-4 py-2 border ${
+                          className={`pl-10 w-full text-sm md:text-base px-4 py-2 border ${
                             errors.socialLinks?.github
                               ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                               : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -535,7 +538,7 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
                           type="url"
                           {...register("socialLinks.portfolio")}
                           placeholder="https://your-portfolio.com"
-                          className={`pl-10 w-full px-4 py-2 border ${
+                          className={`pl-10 w-full text-sm md:text-base px-4 py-2 border ${
                             errors.socialLinks?.portfolio
                               ? "border-red-500 focus:ring-red-500 focus:border-red-500"
                               : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
@@ -553,14 +556,14 @@ const EditProfileForm = ({ initialData }: { initialData: ProfileFormData }) => {
               <button
                 type="button"
                 onClick={() => setIsDialogOpen(false)}
-                className="px-5 py-2 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors"
+                className="md:px-5 px-3 py-2 border border-gray-300 text-gray-700  text-sm md:text-base font-medium rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex items-center px-5 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed shadow-sm"
+                className="flex items-center px-5 py-2 bg-blue-600 text-white  text-sm md:text-base font-medium rounded-lg hover:bg-blue-700 transition-colors disabled:bg-blue-400 disabled:cursor-not-allowed shadow-sm"
               >
                 {isSubmitting ? (
                   <>

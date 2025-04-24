@@ -78,7 +78,7 @@ const EditJobForm = ({ job }: { job: JobFormValues }) => {
   return (
     <Card className="w-full shadow-md border-gray-200">
       <CardHeader className="bg-gray-50 border-b border-gray-100">
-        <CardTitle className="text-xl text-gray-800">
+        <CardTitle className="text-lg md:text-xl text-gray-800">
           Edit Job Details
         </CardTitle>
         <CardDescription>
@@ -86,10 +86,10 @@ const EditJobForm = ({ job }: { job: JobFormValues }) => {
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="pt-6">
+      <CardContent className="md:pt-6 pt-4">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-6 gap-4">
               {/* Basic Information */}
               <div className="space-y-4 md:col-span-2">
                 <h3 className="font-medium text-gray-700 flex items-center gap-2">
@@ -358,12 +358,15 @@ const EditJobForm = ({ job }: { job: JobFormValues }) => {
               <div className="flex gap-3">
                 <Button
                   type="button"
+                  size={"sm"}
                   variant="outline"
                   onClick={() => router.back()}
                 >
                   Cancel
                 </Button>
-                <Button type="submit">Update Job</Button>
+                <Button size={"sm"} type="submit">
+                  Update Job
+                </Button>
               </div>
             </CardFooter>
           </form>

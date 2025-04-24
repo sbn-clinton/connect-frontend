@@ -74,8 +74,8 @@ const SingleJob = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 w-full">
-        <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center">
-          <Loader2 className="h-12 w-12 text-blue-600 animate-spin mb-4" />
+        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg flex flex-col items-center">
+          <Loader2 className="h-8 w-8 md:h-12 md:w-12 text-blue-600 animate-spin mb-4" />
           <p className="text-gray-600 font-medium">Loading job details...</p>
         </div>
       </div>
@@ -85,20 +85,20 @@ const SingleJob = () => {
   if (!job) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 w-full">
-        <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
-            <Shield className="h-8 w-8 text-red-500" />
+        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg flex flex-col items-center">
+          <div className="md:w-16 md:h-16 w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mb-4">
+            <Shield className="md:h-8 md:w-8 w-6 h-6 text-red-500" />
           </div>
-          <h2 className="text-xl font-bold text-gray-800 mb-2">
+          <h2 className="md:text-xl font-bold text-gray-800 mb-2">
             Job Not Found
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-6 text-sm md:text-base">
             The job you&lsquo;re looking for doesn&lsquo;t exist or has been
             removed.
           </p>
           <button
             onClick={() => router.push("/jobs")}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+            className="md:px-6 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 text-sm md:text-base"
           >
             Return to Jobs
           </button>
@@ -135,37 +135,43 @@ const SingleJob = () => {
         transition={{ duration: 0.6 }}
       >
         {/* Job Header */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8">
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-6 md:mb-8">
           <div className="bg-gradient-to-r from-blue-600 to-indigo-700 h-32 md:h-48 relative">
             <div className="absolute -bottom-16 left-8 bg-white p-4 rounded-xl shadow-lg flex items-center justify-center">
-              <div className="w-24 h-24 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-2xl">
+              <div className="md:w-24 md:h-24 w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-2xl">
                 {(job.company?.[0] || "C").toUpperCase()}
               </div>
             </div>
           </div>
 
-          <div className="pt-20 px-8 pb-8">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+          <div className="pt-14 md:pt-20 px-6 md:px-8 pb-6 md:pb-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 md:mb-8">
               <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                <h1 className="text-2xl md:text-4xl font-bold text-gray-800 my-2 md:my-0">
                   {job?.title}
                 </h1>
-                <div className="flex flex-wrap items-center gap-3 text-gray-600">
+                <div className="flex flex-wrap items-center md:gap-3 gap-2 text-gray-600">
                   <div className="flex items-center">
-                    <Building className="h-4 w-4 mr-1" />
-                    <span className="font-medium">{job.company}</span>
+                    <Building className="w-5 h-5 mr-1 md:h-8 md:w-8" />
+                    <span className="font-medium text-sm md:text-base">
+                      {job.company}
+                    </span>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    <span>{job.location}</span>
+                    <MapPin className="md:h-4 md:w-4 h-3 w-3 mr-1" />
+                    <span className=" text-xs md:text-base">
+                      {job.location}
+                    </span>
                   </div>
                   <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{job.jobType}</span>
+                    <Clock className="md:h-4 md:w-4 h-3 w-3 mr-1" />
+                    <span className=" text-xs md:text-base">{job.jobType}</span>
                   </div>
                   <div className="flex items-center">
-                    <Globe className="h-4 w-4 mr-1" />
-                    <span>{job.employmentMode}</span>
+                    <Globe className="md:h-4 md:w-4 h-3 w-3 mr-1" />
+                    <span className=" text-xs md:text-base">
+                      {job.employmentMode}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -254,20 +260,22 @@ const SingleJob = () => {
               variants={itemVariants}
               className="bg-white p-6 rounded-xl shadow-md"
             >
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <FileText className="h-5 w-5 mr-2 text-blue-600" />
+              <h2 className="md:text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <FileText className="md:h-5 md:w-5 h-4 w-4 mr-2 text-blue-600" />
                 Job Description
               </h2>
-              <p className="text-gray-600 leading-relaxed">{job.description}</p>
+              <p className="text-gray-600 leading-relaxed text-sm md:ext-base">
+                {job.description}
+              </p>
             </motion.div>
 
             {/* Requirements */}
             <motion.div
               variants={itemVariants}
-              className="bg-white p-6 rounded-xl shadow-md"
+              className="bg-white p-4 md:p-6 rounded-xl shadow-md"
             >
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Check className="h-5 w-5 mr-2 text-blue-600" />
+              <h2 className="md:text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <Check className="md:h-5 md:w-5 h-4 w-4 mr-2 text-blue-600" />
                 Requirements
               </h2>
               <ul className="text-gray-600 space-y-2">
@@ -276,7 +284,7 @@ const SingleJob = () => {
                     <span className=" w-4 h-4 bg-blue-100 rounded-full text-blue-600 flex items-center justify-center mr-2 mt-1 text-xs">
                       ✓
                     </span>
-                    <span>{req}</span>
+                    <span className="text-sm md:text-base">{req}</span>
                   </li>
                 ))}
               </ul>
@@ -287,8 +295,8 @@ const SingleJob = () => {
               variants={itemVariants}
               className="bg-white p-6 rounded-xl shadow-md"
             >
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Briefcase className="h-5 w-5 mr-2 text-blue-600" />
+              <h2 className="md:text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <Briefcase className="md:h-5 md:w-5 h-4 w-4 mr-2 text-blue-600" />
                 Responsibilities
               </h2>
               <ul className="text-gray-600 space-y-2">
@@ -297,7 +305,7 @@ const SingleJob = () => {
                     <span className=" w-4 h-4 bg-blue-100 rounded-full text-blue-600 flex items-center justify-center mr-2 mt-1 text-xs">
                       •
                     </span>
-                    <span>{item}</span>
+                    <span className="text-sm md:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -308,8 +316,8 @@ const SingleJob = () => {
               variants={itemVariants}
               className="bg-white p-6 rounded-xl shadow-md"
             >
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Gift className="h-5 w-5 mr-2 text-blue-600" />
+              <h2 className="md:text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <Gift className="md:h-5 md:w-5 h-4 w-4 mr-2 text-blue-600" />
                 Benefits
               </h2>
               <ul className="text-gray-600 space-y-2">
@@ -318,7 +326,7 @@ const SingleJob = () => {
                     <span className=" w-4 h-4 bg-green-100 rounded-full text-green-600 flex items-center justify-center mr-2 mt-1 text-xs">
                       ★
                     </span>
-                    <span>{benefit}</span>
+                    <span className="text-sm md:text-base">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -340,15 +348,15 @@ const SingleJob = () => {
                 <motion.div
                   key={app._id}
                   variants={itemVariants}
-                  className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="bg-white border border-gray-200 rounded-lg p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="flex items-start mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-medium mr-4">
+                    <div className="md:w-12 md:h-12 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-medium mr-4">
                       {app.user?.email?.[0].toUpperCase() || "U"}
                     </div>
                     <div>
                       <Link href={`/profile/${app.user._id}`}>
-                        <h3 className="font-bold text-gray-800">
+                        <h3 className="font-bold text-gray-800 text-base md:text-lg">
                           {app.user?.fullName || "Anonymous Applicant"}
                         </h3>
                       </Link>
@@ -370,7 +378,7 @@ const SingleJob = () => {
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center text-gray-600">
                       <CalendarClock className="h-4 w-4 mr-2 text-gray-400" />
-                      <span className="text-sm">
+                      <span className="text-xs md:text-sm">
                         Applied: {new Date(app.appliedAt).toLocaleString()}
                       </span>
                     </div>
@@ -388,7 +396,7 @@ const SingleJob = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <div className="flex items-center justify-between md:pt-4 pt-2 border-t border-gray-100">
                     <ApproveButton appId={app._id} />
                     <RejectButton appId={app._id} />
                   </div>

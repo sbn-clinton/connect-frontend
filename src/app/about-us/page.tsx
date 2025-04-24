@@ -29,7 +29,7 @@ const AboutUsPage = () => {
         <div className="container mx-auto px-4 py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-2xl md:text-5xl font-bold mb-6"
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8 }}
@@ -38,7 +38,7 @@ const AboutUsPage = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl mb-8"
+              className=" md:text-2xl mb-8"
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -48,7 +48,7 @@ const AboutUsPage = () => {
             </motion.p>
 
             <motion.button
-              className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-blue-50 transition duration-300"
+              className="bg-white text-blue-600 font-semibold md:px-6 md:py-3 px-4 py-2 rounded-lg hover:bg-blue-50 transition duration-300 text-sm md:text-base"
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -62,18 +62,18 @@ const AboutUsPage = () => {
       {/* Our Story */}
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-xl md:text-3xl font-bold text-center mb-12 text-gray-800">
             Our Story
           </h2>
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/2">
-              <div className="bg-blue-600 rounded-lg p-2 w-16 h-16 flex items-center justify-center mb-4">
-                <Globe className="text-white" size={32} />
+              <div className="bg-blue-600 rounded-lg p-2 md:w-16 md:h-16 w-10 h-10 flex items-center justify-center mb-4">
+                <Globe className="text-white md:w-14 md:h-14 w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-800">
+              <h3 className="md:text-2xl font-bold mb-4 text-gray-800">
                 Transforming Career Connections
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-4 text-sm md:text-base">
                 Founded in 2023, Connect was born from a simple observation: the
                 job market needed a more efficient, human-centered approach to
                 matching talented professionals with the right opportunities.
@@ -102,10 +102,10 @@ const AboutUsPage = () => {
       <div className="bg-blue-50 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-xl md:text-3xl font-bold mb-6 text-gray-800">
               Our Mission
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-sm md:text-xl text-gray-700 mb-8">
               We&apos;re on a mission to make job matching more intelligent,
               transparent, and personal. By leveraging cutting-edge technology
               with a human touch, we aim to create meaningful connections that
@@ -113,20 +113,22 @@ const AboutUsPage = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center space-x-3 w-full md:w-auto">
-                <Users className="text-blue-600" size={24} />
-                <span className="font-medium text-gray-800">
+                <Users className="text-blue-600 w-4 h-4 md:w-6 md:h-6" />
+                <span className="font-medium text-gray-800 text-sm md:text-base">
                   10,000+ Connections Made
                 </span>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center space-x-3 w-full md:w-auto">
-                <Briefcase className="text-blue-600" size={24} />
-                <span className="font-medium text-gray-800">
+                <Briefcase className="text-blue-600 w-4 h-4 md:w-6 md:h-6" />
+                <span className="font-medium text-gray-800 text-sm md:text-base">
                   5,000+ Companies
                 </span>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-md flex items-center space-x-3 w-full md:w-auto">
-                <Globe className="text-blue-600" size={24} />
-                <span className="font-medium text-gray-800">Global Reach</span>
+                <Globe className="text-blue-600 w-4 h-4 md:w-6 md:h-6" />
+                <span className="font-medium text-gray-800 text-sm md:text-base">
+                  Global Reach
+                </span>
               </div>
             </div>
           </div>
@@ -135,83 +137,83 @@ const AboutUsPage = () => {
 
       {/* Key Features */}
       <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-xl md:text-3xl font-bold text-center mb-12 text-gray-800">
           What Sets Us Apart
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <div className="bg-blue-100 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-              <Shield className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-full p-3 md:w-14 md:h-14 h-10 w-10 flex items-center justify-center mb-4">
+              <Shield className="text-blue-600 w-5 h-5 md:w-8 md:h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="md:text-xl font-bold mb-3 text-gray-800">
               Smart Matching Technology
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               Our proprietary algorithm goes beyond keywords to understand
               skills, culture fit, and career aspirations.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <div className="bg-blue-100 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-              <Award className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-full p-3 md:w-14 md:h-14 h-10 w-10 flex items-center justify-center mb-4">
+              <Award className="text-blue-600 w-5 h-5 md:w-8 md:h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="md:text-xl font-bold mb-3 text-gray-800">
               Quality Over Quantity
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               We focus on meaningful connections rather than overwhelming you
               with irrelevant opportunities or candidates.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <div className="bg-blue-100 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-              <MessageSquare className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-full p-3 md:w-14 md:h-14 h-10 w-10 flex items-center justify-center mb-4">
+              <MessageSquare className="text-blue-600 w-5 h-5 md:w-8 md:h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="md:text-xl font-bold mb-3 text-gray-800">
               Transparent Communication
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               Our platform facilitates clear, direct communication between
               employers and job seekers at every stage.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <div className="bg-blue-100 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-              <Users className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-full p-3 md:w-14 md:h-14 h-10 w-10 flex items-center justify-center mb-4">
+              <Users className="text-blue-600 w-5 h-5 md:w-8 md:h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="md:text-xl font-bold mb-3 text-gray-800">
               Community Support
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               Access career resources, networking opportunities, and expert
               advice from industry professionals.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <div className="bg-blue-100 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-              <Globe className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-full p-3 md:w-14 md:h-14 h-10 w-10 flex items-center justify-center mb-4">
+              <Globe className="text-blue-600 w-5 h-5 md:w-8 md:h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="md:text-xl font-bold mb-3 text-gray-800">
               Global Network
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               Connect with opportunities and talent worldwide, with support for
               multiple languages and regions.
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-            <div className="bg-blue-100 rounded-full p-3 w-14 h-14 flex items-center justify-center mb-4">
-              <Briefcase className="text-blue-600" size={24} />
+            <div className="bg-blue-100 rounded-full p-3 md:w-14 md:h-14 h-10 w-10 flex items-center justify-center mb-4">
+              <Briefcase className="text-blue-600 w-5 h-5 md:w-8 md:h-8" />
             </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-800">
+            <h3 className="md:text-xl font-bold mb-3 text-gray-800">
               Inclusive Hiring
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-sm md:text-base">
               Tools and resources designed to support diversity, equity, and
               inclusion in hiring practices.
             </p>
@@ -222,7 +224,7 @@ const AboutUsPage = () => {
       {/* Team Section */}
       <div className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-xl md:text-3xl font-bold text-center mb-12 text-gray-800">
             Our Leadership Team
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -236,11 +238,13 @@ const AboutUsPage = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-bold text-xl mb-1 text-gray-800">
+                <h3 className="font-bold md:text-xl mb-1 text-gray-800">
                   Sarah Johnson
                 </h3>
-                <p className="text-blue-600 mb-3">CEO & Co-Founder</p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-blue-600 mb-3 text-sm md:text-base">
+                  CEO & Co-Founder
+                </p>
+                <p className="text-gray-600 text-xs md:text-sm">
                   Former HR Director with 15+ years experience in talent
                   acquisition and workforce development.
                 </p>
@@ -257,11 +261,13 @@ const AboutUsPage = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-bold text-xl mb-1 text-gray-800">
+                <h3 className="font-bold md:text-xl mb-1 text-gray-800">
                   Michael Chen
                 </h3>
-                <p className="text-blue-600 mb-3">CTO & Co-Founder</p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-blue-600 mb-3 text-sm md:text-base">
+                  CTO & Co-Founder
+                </p>
+                <p className="text-gray-600 text-xs md:text-sm">
                   Tech innovator specializing in AI-driven solutions with
                   previous exits in the HR tech space.
                 </p>
@@ -278,11 +284,13 @@ const AboutUsPage = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-bold text-xl mb-1 text-gray-800">
+                <h3 className="font-bold md:text-xl mb-1 text-gray-800">
                   Aisha Patel
                 </h3>
-                <p className="text-blue-600 mb-3">Chief Product Officer</p>
-                <p className="text-gray-600 text-sm">
+                <p className="text-blue-600 text-sm md:text-base mb-3">
+                  Chief Product Officer
+                </p>
+                <p className="text-gray-600 text-xs md:text-sm">
                   Product visionary focused on creating intuitive, accessible
                   digital experiences for diverse users.
                 </p>
@@ -295,23 +303,23 @@ const AboutUsPage = () => {
       {/* CTA Section */}
       <div className="bg-gradient-to-r from-indigo-700 to-blue-600 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-xl md:text-3xl font-bold mb-6">
             Ready to Transform Your Hiring Process?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="md:text-xl mb-8 max-w-2xl mx-auto">
             Whether you&apos;re seeking talent or your next career move, Connect
             offers the tools and support you need to succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href={"/create-job"}
-              className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:text-white hover:bg-gradient-to-r from-indigo-700 to-blue-600 hover:border-white transition duration-300 hover:border-2"
+              className="bg-white text-sm md:text-base text-blue-600 font-semibold px-6 py-2 md:py-3 rounded-lg hover:text-white hover:bg-gradient-to-r from-indigo-700 to-blue-600 hover:border-white transition duration-300 hover:border-2"
             >
               For Employers
             </Link>
             <Link
               href={"/jobs"}
-              className="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:text-blue-600 hover:border-blue-600 hover:bg-white hover:bg-opacity-10 transition duration-300"
+              className="border-2 border-white text-white font-semibold px-6 py-2 md:py-3  text-sm md:text-base rounded-lg hover:text-blue-600 hover:border-blue-600 hover:bg-white hover:bg-opacity-10 transition duration-300"
             >
               For Job Seekers
             </Link>

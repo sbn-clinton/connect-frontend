@@ -160,19 +160,19 @@ const ProfilePage = () => {
 
             {/* Name and Role */}
             <div className="mt-4 md:mt-0 md:ml-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+              <h1 className="text-xl md:text-3xl font-bold text-gray-900">
                 {user.fullName}
               </h1>
               <div className="flex items-center mt-1">
                 <Badge
                   className={`${
                     user.role === "employer" ? "bg-purple-600" : "bg-blue-600"
-                  } text-white px-3 py-1`}
+                  } text-white px-3 py-1 text-sm md:text-base`}
                 >
                   {user.role === "employer" ? "Employer" : "Job Seeker"}
                 </Badge>
                 <span className="text-gray-500 text-sm ml-4">
-                  <MapPin className="inline-block w-4 h-4 mr-1" />
+                  <MapPin className="inline-block h-3 w-3 md:w-4 md:h-4 mr-1" />
                   {user.location}
                 </span>
               </div>
@@ -183,7 +183,7 @@ const ProfilePage = () => {
               {file && (
                 <Button
                   variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50 px-3 py-1 text-sm md:text-base md:px-4 md:py-2"
                   onClick={onChangeImage}
                   disabled={loading}
                 >
@@ -196,9 +196,10 @@ const ProfilePage = () => {
                 <Link href="/create-job">
                   <Button
                     variant="default"
-                    className="bg-purple-600 text-white hover:bg-purple-700"
+                    className="bg-purple-600 text-white hover:bg-purple-700 px-3 py-1 text-sm md:text-base md:px-4 md:py-2"
                   >
-                    <Briefcase className="mr-2 w-4 h-4" /> Post a Job
+                    <Briefcase className="mr-2 h-3 w-3 md:w-4 md:h-4" /> Post a
+                    Job
                   </Button>
                 </Link>
               )}
@@ -207,7 +208,7 @@ const ProfilePage = () => {
         </div>
 
         {/* Main Content - with space for the absolute positioned elements above */}
-        <div className="pt-36 md:pt-20">
+        <div className="pt-32 md:pt-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left Sidebar */}
             <div className="md:col-span-1">
@@ -220,26 +221,36 @@ const ProfilePage = () => {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div className="flex items-center">
-                      <Mail className="w-5 h-5 text-blue-600 mr-3" />
+                      <Mail className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Email</p>
-                        <p className="font-medium">{user.email}</p>
+                        <p className="text-xs md:text-sm text-gray-500">
+                          Email
+                        </p>
+                        <p className="font-medium text-sm md:text-base">
+                          {user.email}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-blue-600 mr-3" />
+                      <Phone className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Phone</p>
-                        <p className="font-medium">
+                        <p className="text-xs md:text-sm text-gray-500">
+                          Phone
+                        </p>
+                        <p className="font-medium text-sm md:text-base">
                           {user.phoneNumber || "Not provided"}
                         </p>
                       </div>
                     </div>
                     <div className="flex items-center">
-                      <MapPin className="w-5 h-5 text-blue-600 mr-3" />
+                      <MapPin className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-3" />
                       <div>
-                        <p className="text-sm text-gray-500">Location</p>
-                        <p className="font-medium">{user.location}</p>
+                        <p className="text-xs md:text-sm text-gray-500">
+                          Location
+                        </p>
+                        <p className="font-medium text-sm md:text-base">
+                          {user.location}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -255,9 +266,9 @@ const ProfilePage = () => {
                           href={user.socialLinks.linkedIn}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
+                          className="flex items-center text-gray-700 hover:text-blue-600 transition-colors text-sm md:text-base"
                         >
-                          <Linkedin className="w-5 h-5 text-blue-600 mr-2" />
+                          <Linkedin className="w-4 h-4 md:w-5 md:h-5 text-blue-600 mr-2" />
                           LinkedIn Profile
                         </a>
                       )}
@@ -266,9 +277,9 @@ const ProfilePage = () => {
                           href={user.socialLinks.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center text-gray-700 hover:text-gray-900 transition-colors"
+                          className="flex items-center text-gray-700 hover:text-gray-900 transition-colors text-sm md:text-base"
                         >
-                          <Github className="w-5 h-5 text-gray-900 mr-2" />
+                          <Github className="w-4 h-4 md:w-5 md:h-5text-gray-900 mr-2" />
                           GitHub Profile
                         </a>
                       )}
@@ -277,9 +288,9 @@ const ProfilePage = () => {
                           href={user.socialLinks.portfolio}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center text-gray-700 hover:text-green-600 transition-colors"
+                          className="flex items-center text-gray-700 hover:text-green-600 transition-colors text-sm md:text-base"
                         >
-                          <Globe className="w-5 h-5 text-green-600 mr-2" />
+                          <Globe className="w-4 h-4 md:w-5 md:h-5 text-green-600 mr-2" />
                           Portfolio Website
                         </a>
                       )}
@@ -300,10 +311,10 @@ const ProfilePage = () => {
             <div className="md:col-span-2">
               {/* Tabs */}
               <div className="bg-white rounded-lg shadow-md mb-6 overflow-hidden">
-                <div className="flex border-b justify-between items-center text-wrap px-2 md:px-4">
+                <div className="grid grid-cols-3 border-b  items-center justify-center  text-wrap px-2 md:px-4">
                   <button
                     onClick={() => setActiveTab("about")}
-                    className={` md:px-6 py-3 font-medium text-xs md:text-sm  md:flex-none ${
+                    className={`py-2 md:px-6 md:py-3 font-medium text-xs md:text-sm  md:flex-none ${
                       activeTab === "about"
                         ? "text-blue-600 border-b-2 border-blue-600"
                         : "text-gray-500 hover:text-gray-700"
@@ -313,7 +324,7 @@ const ProfilePage = () => {
                   </button>
                   <button
                     onClick={() => setActiveTab("experience")}
-                    className={`md:px-6 py-3 font-medium text-xs md:text-sm  md:flex-none ${
+                    className={`py-2 md:px-6 md:py-3 font-medium text-xs md:text-sm  md:flex-none ${
                       activeTab === "experience"
                         ? "text-blue-600 border-b-2 border-blue-600"
                         : "text-gray-500 hover:text-gray-700"
@@ -323,7 +334,7 @@ const ProfilePage = () => {
                   </button>
                   <button
                     onClick={() => setActiveTab("skills")}
-                    className={` md:px-6 py-3 font-medium text-xs md:text-sm  md:flex-none ${
+                    className={` py-2 md:px-6 md:py-3 font-medium text-xs md:text-sm  md:flex-none ${
                       activeTab === "skills"
                         ? "text-blue-600 border-b-2 border-blue-600"
                         : "text-gray-500 hover:text-gray-700"
@@ -333,7 +344,7 @@ const ProfilePage = () => {
                   </button>
                   <button
                     onClick={() => setActiveTab("notifications")}
-                    className={` md:px-6 py-3 font-medium text-xs md:text-sm  md:flex-none ${
+                    className={` py-2 md:px-6 md:py-3 font-medium text-xs md:text-sm  md:flex-none ${
                       activeTab === "notifications"
                         ? "text-blue-600 border-b-2 border-blue-600"
                         : "text-gray-500 hover:text-gray-700"
@@ -344,7 +355,7 @@ const ProfilePage = () => {
                   {user.role === "employer" ? (
                     <button
                       onClick={() => setActiveTab("myjobs")}
-                      className={` md:px-6 py-3 font-medium text-xs md:text-sm  md:flex-none ${
+                      className={` py-2 md:px-6 md:py-3 font-medium text-xs md:text-sm  md:flex-none ${
                         activeTab === "myjobs"
                           ? "text-blue-600 border-b-2 border-blue-600"
                           : "text-gray-500 hover:text-gray-700"
@@ -355,7 +366,7 @@ const ProfilePage = () => {
                   ) : (
                     <button
                       onClick={() => setActiveTab("myapplications")}
-                      className={` md:px-6 py-3 font-medium text-xs md:text-sm  md:flex-none ${
+                      className={` py-2 md:px-6 md:py-3 font-medium text-xs md:text-sm  md:flex-none ${
                         activeTab === "myapplications"
                           ? "text-blue-600 border-b-2 border-blue-600"
                           : "text-gray-500 hover:text-gray-700"
@@ -370,16 +381,16 @@ const ProfilePage = () => {
                   {/* About Tab */}
                   {activeTab === "about" && (
                     <div>
-                      <h3 className="text-lg font-medium text-gray-900 mb-4">
+                      <h3 className="md:text-lg font-medium text-gray-900 mb-2 md:mb-4">
                         About Me
                       </h3>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed text-sm md:text-base">
                         {user.bio || "No bio information provided yet."}
                       </p>
 
                       <div className="mt-8">
-                        <h3 className="text-lg font-medium text-gray-900 mb-4 flex items-center">
-                          <GraduationCap className="w-5 h-5 mr-2 text-blue-600" />
+                        <h3 className="md:text-lg font-medium text-gray-900 mb-2 md:mb-4 flex items-center">
+                          <GraduationCap className="w-4 h-4 md:w-5 md:h-5 mr-2 text-blue-600" />
                           Qualifications
                         </h3>
                         {user.qualifications &&
@@ -388,10 +399,10 @@ const ProfilePage = () => {
                             {user.qualifications.map(
                               (qualification: string, index: number) => (
                                 <li key={index} className="flex items-start">
-                                  <div className="flex-shrink-0 h-5 w-5 flex items-center justify-center mt-1">
+                                  <div className="flex-shrink-0 md:h-5 md:w-5 w-4 h-4 flex items-center justify-center mt-1">
                                     <div className="h-2 w-2 bg-blue-600 rounded-full"></div>
                                   </div>
-                                  <span className="ml-3 text-gray-700">
+                                  <span className="ml-2 md:ml-3 text-gray-700 text-sm md:text-base">
                                     {qualification}
                                   </span>
                                 </li>
@@ -411,13 +422,10 @@ const ProfilePage = () => {
                   {activeTab === "experience" && (
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-medium text-gray-900 flex items-center">
+                        <h3 className="md:text-lg font-medium text-gray-900 flex items-center">
                           <Briefcase className="w-5 h-5 mr-2 text-blue-600" />
                           Work Experience
                         </h3>
-                        <Button variant="outline" size="sm" className="text-xs">
-                          <FaEdit className="mr-1" /> Add Experience
-                        </Button>
                       </div>
 
                       {user.experience && user.experience.length > 0 ? (
@@ -428,7 +436,7 @@ const ProfilePage = () => {
                               className="relative pl-8 pb-6 border-l-2 border-blue-100 last:border-0 last:pb-0"
                             >
                               <div className="absolute left-0 top-0 transform -translate-x-1/2 bg-white">
-                                <div className="w-4 h-4 rounded-full bg-blue-600"></div>
+                                <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-blue-600"></div>
                               </div>
                               <div className="mb-1">
                                 <span className="inline-block px-2 py-1 text-xs font-medium bg-blue-50 text-blue-700 rounded-full">
@@ -436,11 +444,11 @@ const ProfilePage = () => {
                                   {exp.years === 1 ? "year" : "years"}
                                 </span>
                               </div>
-                              <h4 className="text-lg font-medium text-gray-900">
+                              <h4 className="md:text-lg font-medium text-gray-900">
                                 {exp.title}
                               </h4>
                               <p className="text-gray-600">{exp.company}</p>
-                              <p className="text-gray-500 text-sm mt-2">
+                              <p className="text-gray-500 text-xs md:text-sm mt-2">
                                 {exp.description || ""}
                               </p>
                             </div>
@@ -468,13 +476,13 @@ const ProfilePage = () => {
                   {activeTab === "skills" && (
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-medium text-gray-900 flex items-center">
-                          <Award className="w-5 h-5 mr-2 text-blue-600" />
+                        <h3 className="md:text-lg font-medium text-gray-900 flex items-center">
+                          <Award className="md:w-5 md:h-5 w-4 h-4 mr-2 text-blue-600" />
                           Skills & Expertise
                         </h3>
-                        <Button variant="outline" size="sm" className="text-xs">
+                        {/* <Button variant="outline" size="sm" className="text-xs">
                           <FaEdit className="mr-1" /> Add Skills
-                        </Button>
+                        </Button> */}
                       </div>
 
                       {user.skills && user.skills.length > 0 ? (
@@ -483,14 +491,14 @@ const ProfilePage = () => {
                             {user.skills.map((skill: string, index: number) => (
                               <Badge
                                 key={index}
-                                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-3 text-sm font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm"
+                                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-1 px-2 md:py-2 md:px-3 text-xs md:text-sm font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm"
                               >
                                 {skill}
                               </Badge>
                             ))}
                           </div>
 
-                          <div className="bg-blue-50 rounded-lg p-4 text-blue-800 text-sm">
+                          <div className="bg-blue-50 rounded-lg p-4 text-blue-800 md:text-sm text-xs">
                             <p>
                               Having accurate skills helps employers find your
                               profile and match you with relevant opportunities.
@@ -514,18 +522,18 @@ const ProfilePage = () => {
                     </div>
                   )}
 
-                  {/* My Jobs Tab */}
+                  {/* My Notifications Tab */}
                   {activeTab === "notifications" && (
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-medium text-gray-900 flex items-center">
-                          <MdNotificationImportant className="w-5 h-5 mr-2 text-blue-600" />
+                        <h3 className="md:text-lg font-medium text-gray-900 flex items-center">
+                          <MdNotificationImportant className="md:w-5 md:h-5 w-4 h-4 mr-2 text-blue-600" />
                           Latest Notifications
                         </h3>
                       </div>
                       <>
                         {user.notifications && user.notifications.length > 0 ? (
-                          <div className="space-y-6">
+                          <div className="md:space-y-6 space-y-4">
                             {[...user.notifications]
                               .sort(
                                 (a, b) =>
@@ -536,7 +544,7 @@ const ProfilePage = () => {
                               .map((job, index) => (
                                 <div
                                   key={index}
-                                  className={`relative pl-8 pb-4 border-l-2 ${
+                                  className={`relative md:pl-8 pl-4 pb-2 md:pb-4 border-l-2 ${
                                     job.read
                                       ? "border-blue-100"
                                       : "border-blue-400"
@@ -579,8 +587,8 @@ const ProfilePage = () => {
                   {activeTab === "myjobs" && (
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-medium text-gray-900 flex items-center">
-                          <Briefcase className="w-5 h-5 mr-2 text-blue-600" />
+                        <h3 className="md:text-lg font-medium text-gray-900 flex items-center">
+                          <Briefcase className="md:w-5 md:h-5 h-4 w-4 mr-2 text-blue-600" />
                           My Jobs
                         </h3>
                       </div>
@@ -593,8 +601,8 @@ const ProfilePage = () => {
                   {activeTab === "myapplications" && (
                     <div>
                       <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-medium text-gray-900 flex items-center">
-                          <Briefcase className="w-5 h-5 mr-2 text-blue-600" />
+                        <h3 className="md:text-lg font-medium text-gray-900 flex items-center">
+                          <Briefcase className="md:w-5 md:h-5 h-4 w-4 mr-2 text-blue-600" />
                           My Applications
                         </h3>
                       </div>
@@ -608,8 +616,8 @@ const ProfilePage = () => {
               {user.role === "employer" && (
                 <Card className="shadow-md mb-6 border-0 overflow-hidden">
                   <CardHeader className="bg-gradient-to-r from-purple-50 to-blue-50 border-b">
-                    <CardTitle className="text-lg font-medium text-gray-900 flex items-center">
-                      <Briefcase className="w-5 h-5 mr-2 text-purple-600" />
+                    <CardTitle className="md:text-lg font-medium text-gray-900 flex items-center">
+                      <Briefcase className="md:w-5 md:h-5 w-4 h-4 mr-2 text-purple-600" />
                       Company Jobs
                     </CardTitle>
                   </CardHeader>

@@ -75,10 +75,10 @@ export default function Jobs() {
             className="mb-6"
           >
             <Briefcase className="inline-block text-blue-600 mb-4" size={40} />
-            <h1 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            <h1 className="text-2xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
               {user?.fullName}&lsquo;s Job Connect
             </h1>
-            <p className="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 mt-4  max-w-2xl mx-auto text-sm md:text-lg">
               Discover opportunities that match your skills and aspirations.
               Your next career move starts here.
             </p>
@@ -100,7 +100,7 @@ export default function Jobs() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 transition duration-300">
+              <button className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 md:py-3 md:px-6 transition duration-300 h-fit">
                 Search
               </button>
             </div>
@@ -114,20 +114,20 @@ export default function Jobs() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="flex flex-wrap justify-center gap-3 mb-10"
         >
-          <button className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md border border-gray-200 flex items-center gap-2 transition duration-300">
+          <button className="bg-white px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium text-gray-700 shadow-sm hover:shadow-md border border-gray-200 flex items-center gap-2 transition duration-300">
             <Filter size={16} />
             All Jobs
           </button>
-          <button className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
+          <button className="bg-white px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium  text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
             Remote
           </button>
-          <button className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
+          <button className="bg-white px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium  text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
             Full-time
           </button>
-          <button className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
+          <button className="bg-white px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium  text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
             Part-time
           </button>
-          <button className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
+          <button className="bg-white px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium  text-gray-700 shadow-sm hover:shadow-md border border-gray-200 transition duration-300">
             Contract
           </button>
         </motion.div>
@@ -140,10 +140,10 @@ export default function Jobs() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <h2 className="text-2xl font-bold text-gray-800">
+            <h2 className="text-lg md:text-2xl font-bold text-gray-800">
               Available Positions
             </h2>
-            <p className="text-blue-600 font-medium">
+            <p className="text-blue-600 font-medium text-sm md:text-base">
               {filteredJobs.length} Jobs Found
             </p>
           </motion.div>
@@ -154,12 +154,12 @@ export default function Jobs() {
             </div>
           ) : filteredJobs.length === 0 ? (
             <div className="text-center py-16 bg-white rounded-lg shadow-sm">
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 md:text-lg">
                 No jobs matching your search criteria.
               </p>
               <button
                 onClick={() => setSearchTerm("")}
-                className="mt-4 text-blue-600 font-medium hover:underline"
+                className="mt-4 text-blue-600 font-medium hover:underline text-sm md:text-base"
               >
                 Clear search and show all jobs
               </button>
@@ -185,16 +185,16 @@ export default function Jobs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.5 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white text-center shadow-xl"
+          className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-7 md:p-12 text-white text-center shadow-xl"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-lg md:text-3xl font-bold mb-4">
             Not finding what you&lsquo;re looking for?
           </h2>
-          <p className="mb-6 max-w-2xl mx-auto">
+          <p className="mb-6 max-w-2xl mx-auto text-sm md:text-base">
             Create a job alert and we&lsquo;ll notify you when new opportunities
             match your criteria.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-full shadow-md hover:shadow-lg transition duration-300 flex items-center gap-2 mx-auto">
+          <button className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-2 px-4 md:py-3 md:px-8 rounded-full shadow-md hover:shadow-lg transition duration-300 flex items-center gap-2 mx-auto">
             Create Job Alert
             <ArrowRight size={16} />
           </button>

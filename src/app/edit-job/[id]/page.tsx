@@ -42,9 +42,11 @@ const EditJob = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 w-full">
-        <div className="bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center">
-          <Loader2 className="h-12 w-12 text-blue-600 animate-spin mb-4" />
-          <p className="text-gray-600 font-medium">Loading job details...</p>
+        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg flex flex-col items-center">
+          <Loader2 className="md:h-12 md:w-12 h-8 w-8 text-blue-600 animate-spin mb-4" />
+          <p className="text-gray-600 font-medium text-sm md:text-base">
+            Loading job details...
+          </p>
         </div>
       </div>
     );
@@ -58,7 +60,7 @@ const EditJob = () => {
   console.log(job);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24 pb-16 px-4 w-full">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 md:pt-24 pt-20 md:pb-16 pb-10 px-3 md:px-4 w-full">
       <motion.div
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
@@ -66,8 +68,8 @@ const EditJob = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="flex flex-col items-center gap-8 mb-10">
-          <div className="bg-blue-50 p-4 rounded-full">
-            <BsBriefcase className="text-blue-600 text-3xl" />
+          <div className="bg-blue-50 p-3 md:p-4 rounded-full">
+            <BsBriefcase className="text-blue-600 text-2xl md:text-3xl" />
           </div>
 
           <div className="text-center space-y-3">
@@ -82,7 +84,7 @@ const EditJob = () => {
 
           <div className="w-full max-w-2xl mx-auto bg-white shadow-md rounded-lg overflow-hidden border border-gray-100">
             <div className="bg-blue-600 h-2 w-full"></div>
-            <div className="p-6">
+            <div className="p-4 md:p-6">
               <EditJobForm job={job} />
             </div>
           </div>

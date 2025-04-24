@@ -78,7 +78,7 @@ const ApplyForJob = ({
       {/* Dialog Trigger Button */}
       <button
         onClick={() => setIsDialogOpen(true)}
-        className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-4 py-2 text-sm rounded-lg transition-all"
+        className="bg-blue-600 hover:bg-blue-700 text-white text-sm md:text-base px-3 md:px-4 py-2 md:py-3 rounded-lg transition-all"
       >
         Apply Now
       </button>
@@ -110,31 +110,33 @@ const ApplyForJob = ({
             </button>
 
             {/* Dialog Header */}
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-2xl font-bold text-gray-800">
+            <div className="p-4 md:p-6 border-b border-gray-200">
+              <h2 className="text-lg md:text-2xl font-bold text-gray-800">
                 Apply for {jobTitle}
               </h2>
-              <p className="text-gray-500 mt-1">
+              <p className="text-sm md:text-base text-gray-500 mt-1">
                 Upload your resume to submit your application
               </p>
             </div>
 
             {/* Dialog Content */}
             <div className="p-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 {/* Success message */}
                 {successMessage && (
-                  <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-2" />
-                    <span>{successMessage}</span>
+                  <div className="bg-green-50 border border-green-200 text-green-700 md:px-4 md:py-3 px-3 py-2 rounded-lg flex items-center">
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                    <span className="text-sm md:text-base">
+                      {successMessage}
+                    </span>
                   </div>
                 )}
 
                 {/* Error message */}
                 {errorMessage && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center">
-                    <AlertCircle className="w-5 h-5 mr-2" />
-                    <span>{errorMessage}</span>
+                  <div className="bg-red-50 border border-red-200 text-red-700  md:px-4 md:py-3 px-3 py-2 rounded-lg flex items-center">
+                    <AlertCircle className="w-4 h-4 md:w-5 md:h-5 mr-2" />
+                    <span className="text-sm md:text-base">{errorMessage}</span>
                   </div>
                 )}
 
@@ -142,7 +144,7 @@ const ApplyForJob = ({
                   {/* File Upload Area */}
                   <div
                     className={`
-                      border-2 border-dashed rounded-lg p-6 transition-all flex flex-col items-center cursor-pointer
+                      border-2 border-dashed rounded-lg p-4 md:p-6 transition-all flex flex-col items-center cursor-pointer
                       ${
                         uploadStatus === "selected"
                           ? "border-blue-400 bg-blue-50"
@@ -156,26 +158,26 @@ const ApplyForJob = ({
                     onClick={() => document.getElementById("resume")?.click()}
                   >
                     {uploadStatus === "idle" && (
-                      <Upload className="h-12 w-12 text-gray-400 mb-2" />
+                      <Upload className="md:h-12 md:w-12 h-8 w-8 text-gray-400 mb-2" />
                     )}
                     {uploadStatus === "selected" && (
-                      <FileText className="h-12 w-12 text-blue-500 mb-2" />
+                      <FileText className="md:h-12 md:w-12 h-8 w-8  text-blue-500 mb-2" />
                     )}
                     {uploadStatus === "success" && (
-                      <CheckCircle className="h-12 w-12 text-green-500 mb-2" />
+                      <CheckCircle className="md:h-12 md:w-12 h-8 w-8  text-green-500 mb-2" />
                     )}
                     {uploadStatus === "error" && (
-                      <AlertCircle className="h-12 w-12 text-red-500 mb-2" />
+                      <AlertCircle className="md:h-12 md:w-12 h-8 w-8  text-red-500 mb-2" />
                     )}
 
                     <label
                       htmlFor="resume"
                       className="text-center block cursor-pointer"
                     >
-                      <span className="font-medium text-gray-700 block mb-1">
+                      <span className="font-medium text-gray-700 block mb-1 text-sm md:text-base">
                         {file ? file.name : "Upload your resume"}
                       </span>
-                      <span className="text-sm text-gray-500 block">
+                      <span className="text-xs md:text-sm text-gray-500 block">
                         {uploadStatus === "selected"
                           ? "File selected"
                           : uploadStatus === "success"
@@ -200,7 +202,7 @@ const ApplyForJob = ({
                   {/* File info */}
                   {file && (
                     <div className="flex items-center text-sm">
-                      <FileText className="h-4 w-4 text-gray-400 mr-2" />
+                      <FileText className="h-3 w-3 md:h-4 md:w-4 text-gray-400 mr-2" />
                       <span className="text-gray-600">
                         {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
                       </span>
@@ -209,11 +211,11 @@ const ApplyForJob = ({
                 </div>
 
                 {/* Dialog Footer */}
-                <div className="flex flex-col sm:flex-row gap-2 mt-6 pt-4 border-t border-gray-100">
+                <div className="flex flex-col sm:flex-row gap-2 mt-4 md:mt-6 pt-3 md:pt-4 border-t border-gray-100">
                   <button
                     type="button"
                     onClick={() => setIsDialogOpen(false)}
-                    className="w-full sm:w-auto px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+                    className="w-full text-sm md:text-base sm:w-auto px-3 py-2 md:px-4 md:py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
                   >
                     Cancel
                   </button>
@@ -222,7 +224,7 @@ const ApplyForJob = ({
                     disabled={
                       !file || isSubmitting || uploadStatus === "success"
                     }
-                    className={`w-full sm:w-auto px-4 py-2 text-white font-medium rounded-lg ${
+                    className={`w-full text-sm md:text-base sm:w-auto px-3 py-2 md:px-4 md:py-2 text-white font-medium rounded-lg ${
                       !file || isSubmitting || uploadStatus === "success"
                         ? "bg-gray-400 cursor-not-allowed"
                         : "bg-blue-600 hover:bg-blue-700"
@@ -230,13 +232,13 @@ const ApplyForJob = ({
                   >
                     {isSubmitting ? (
                       <div className="flex items-center justify-center">
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                        <div className="md:w-4 md:h-4 w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                         <span>Submitting...</span>
                       </div>
                     ) : uploadStatus === "success" ? (
                       <div className="flex items-center justify-center">
-                        <CheckCircle className="w-4 h-4 mr-2" />
-                        <span>Submitted</span>
+                        <CheckCircle className="md:w-4 md:h-4 h-3 w-3 mr-2" />
+                        <span className="text-sm md:text-base">Submitted</span>
                       </div>
                     ) : (
                       "Submit Application"

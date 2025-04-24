@@ -64,7 +64,7 @@ const MyApplications = () => {
       className="bg-red-600 hover:bg-red-700 text-white flex items-center gap-1 font-medium"
     >
       <Trash2 className="w-4 h-4" />
-      <span className="text-sm">Delete</span>
+      <span className="text-sm hidden md:inline">Delete</span>
     </Button>
   );
 
@@ -72,7 +72,7 @@ const MyApplications = () => {
     <>
       {loading ? (
         <div className="flex justify-center items-center h-64">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+          <div className="animate-spin rounded-full h-7 w-7 md:h-12 md:w-12 border-t-2 border-b-2 border-blue-600"></div>
         </div>
       ) : (
         <>
@@ -81,10 +81,10 @@ const MyApplications = () => {
               {applications.map((app: Application) => (
                 <div
                   key={app._id}
-                  className="relative pl-8 pb-6 border-l-2 border-blue-100 last:border-0 last:pb-0"
+                  className="relative pl-4 pb-3 md:pl-8 md:pb-6 border-l-2 border-blue-100 last:border-0 last:pb-0"
                 >
                   <div className="absolute left-0 top-0 transform -translate-x-1/2 bg-white">
-                    <div className="w-4 h-4 rounded-full bg-blue-600"></div>
+                    <div className="md:w-4 md:h-4 h-3 w-3 rounded-full bg-blue-600"></div>
                   </div>
                   <div className="flex justify-between items-start mb-1">
                     <span className="inline-block px-2 py-1 text-xs font-medium bg-blue-50 text-blue-700 rounded-full">
@@ -94,18 +94,20 @@ const MyApplications = () => {
                       <DeleteButton id={app._id} />
                     </div>
                   </div>
-                  <h4 className="text-lg font-medium text-gray-900">
+                  <h4 className="md:text-lg font-medium text-gray-900">
                     {app.job.title}
                   </h4>
-                  <p className="text-gray-600">{app.job.company}</p>
-                  <p className="text-gray-500 text-sm mt-2">
+                  <p className="text-sm md:text-base text-gray-600">
+                    {app.job.company}
+                  </p>
+                  <p className="text-gray-500 text-xs md:text-sm mt-2">
                     {app.job.description}
                   </p>
                 </div>
               ))}
             </div>
           ) : (
-            <div className="bg-blue-50 rounded-lg p-6 text-center">
+            <div className="bg-blue-50 rounded-lg p-3 md:p-6 text-center">
               <p className="text-gray-600 mb-3">
                 You haven&lsquo;t applied to any jobs yet
               </p>
