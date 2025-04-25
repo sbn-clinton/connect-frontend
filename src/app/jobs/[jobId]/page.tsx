@@ -50,6 +50,9 @@ const SingleJob = () => {
           `${process.env.NEXT_PUBLIC_API_URL}/jobs/${jobId}`,
           {
             withCredentials: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
         );
         setJob(res.data);
