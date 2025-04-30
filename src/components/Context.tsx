@@ -19,12 +19,29 @@ export const Context = ({ children }: { children: React.ReactNode }) => {
 
   const UpdateUser = (user: User) => {
     setUser(user);
-    localStorage.setItem("user", JSON.stringify(user));
+
+    // Save user data in both localStorage (persistent) and sessionStorage (session-only)
+    if (typeof window !== "undefined") {
+      localStorage.setItem("user", JSON.stringify(user));
+      sessionStorage.setItem("user", JSON.stringify(user));
+    }
   };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const storedUser = JSON.parse(localStorage.getItem("user") || "null");
+      // Try to get user from sessionStorage first (for current session)
+      let storedUser = JSON.parse(sessionStorage.getItem("user") || "null");
+
+      // If not in sessionStorage, try localStorage (for returning users)
+      if (!storedUser) {
+        storedUser = JSON.parse(localStorage.getItem("user") || "null");
+
+        // If found in localStorage but not in sessionStorage, also save to sessionStorage
+        if (storedUser) {
+          sessionStorage.setItem("user", JSON.stringify(storedUser));
+        }
+      }
+
       setUser(storedUser);
     }
   }, []);
