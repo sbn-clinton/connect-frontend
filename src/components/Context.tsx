@@ -41,6 +41,7 @@ export const Context = ({ children }: { children: React.ReactNode }) => {
           sessionStorage.setItem("user", JSON.stringify(storedUser));
         }
       }
+
       setUser(storedUser);
     }
   }, []);
