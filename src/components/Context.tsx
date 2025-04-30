@@ -13,20 +13,6 @@ type GeneralContextType = {
 
 const GeneralContext = createContext<GeneralContextType | null>(null);
 
-const COOKIE_NAME = "user";
-
-const setCookie = (name: string, value: string, days = 7) => {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(
-    value
-  )}; path=/; expires=${expires}`;
-};
-
-const getCookie = (name: string): string | null => {
-  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-  return match ? decodeURIComponent(match[2]) : null;
-};
-
 export const Context = ({ children }: { children: React.ReactNode }) => {
   const [session, setSession] = useState(false);
   const [user, setUser] = useState<User | null>(null);
@@ -34,34 +20,25 @@ export const Context = ({ children }: { children: React.ReactNode }) => {
   const UpdateUser = (user: User) => {
     setUser(user);
 
+    // Save user data in both localStorage (persistent) and sessionStorage (session-only)
     if (typeof window !== "undefined") {
-      const userString = JSON.stringify(user);
-
-      // Store in both storage and cookie
-      sessionStorage.setItem("user", userString);
-      localStorage.setItem("user", userString);
-      setCookie(COOKIE_NAME, userString, 7); // Cookie valid for 7 days
+      localStorage.setItem("user", JSON.stringify(user));
+      sessionStorage.setItem("user", JSON.stringify(user));
     }
   };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      // Try to get user from sessionStorage first (for current session)
       let storedUser = JSON.parse(sessionStorage.getItem("user") || "null");
 
+      // If not in sessionStorage, try localStorage (for returning users)
       if (!storedUser) {
         storedUser = JSON.parse(localStorage.getItem("user") || "null");
 
+        // If found in localStorage but not in sessionStorage, also save to sessionStorage
         if (storedUser) {
           sessionStorage.setItem("user", JSON.stringify(storedUser));
-        }
-      }
-
-      if (!storedUser) {
-        const cookieUser = getCookie(COOKIE_NAME);
-        if (cookieUser) {
-          storedUser = JSON.parse(cookieUser);
-          sessionStorage.setItem("user", JSON.stringify(storedUser));
-          localStorage.setItem("user", JSON.stringify(storedUser));
         }
       }
 
